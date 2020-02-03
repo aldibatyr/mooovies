@@ -1,0 +1,33 @@
+.categories {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  height: 70vh;
+}
+
+.category {
+  margin: 10px 0;
+
+
+  .button-box {
+    button {
+      
+      background: none;
+      color: #ffffff;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      transition: 0.2s ease-in-out;
+      padding: 5px 20px;
+      padding-left: 5px;
+      border-radius: 2px 30px 30px 2px;
+      &:hover {
+        background: rgb(54, 17, 52);
+        color: #B528B2;
+        cursor: pointer;
+      }
+    }
+
+  }
+}

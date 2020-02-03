@@ -1,0 +1,21 @@
+.navigation {
+  grid-column: 2/12;
+  height: 70px;
+  align-items: center;
+  display: flex;
+}
+
+.sort-options {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  div {
+    label {
+      margin-right: 5px;
+    }
+  }
+}
+
+.search-wrapper {
+  width: 70%;
+}
