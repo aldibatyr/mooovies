@@ -4,11 +4,6 @@ import MovieCard from '../MovieCard/MovieCard';
 
 const TopResults = (props) => {
 
-  const day = new Date().getDay();
-  const month = new Date().getMonth();
-  const year = new Date().getFullYear()
-  const makeDate = `${day} ${month} ${year}`;
-
 
   return (
     <div className="top-results">
@@ -16,7 +11,7 @@ const TopResults = (props) => {
         <span>Top Results</span>
       </div>
       <div className="movies-cards">
-        {props.topMovies.map(movie => <MovieCard key={movie.id} movie={movie}/>)}
+        {props.topMovies.map(movie => <MovieCard handleClick={props.handleClick} key={movie.id} movie={movie}/>)}
       </div>
     </div>
   )

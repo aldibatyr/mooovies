@@ -13,17 +13,21 @@
 .movies-cards {
   display: flex;
   justify-content: space-between;
+  height: 100%;
 }
 
 //movie card styling
 
 .movie-card {
-  height: 140px;
   width: 30%;
+  height: 100%;
   border-radius: 30px;
   position: relative;
   padding:0 15px;
   overflow: hidden;
+  &:hover {
+    cursor: pointer;
+  }
   img {
     position: absolute;
     top: 0;
@@ -37,7 +41,7 @@
       filter: grayscale(0%);
       box-shadow: 6px 6px 16px #18171785;
       transform: scale(1.1);
-      cursor: pointer;
+
     }
   }
   .movie-info {
