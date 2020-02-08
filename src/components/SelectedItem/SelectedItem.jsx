@@ -12,7 +12,7 @@ const SelectedItem = (props) => {
   const getYTLink = async () => {
     setLoading(true)
     const res = await fetch(`${config.API_ENDPOINT}/movie/${props.selectedMovie.id}/videos?api_key=${config.API_KEY}`)
-    await res.json().then(data => console.log(data)).then(data => setVideoId(data.results[0].key)).catch(err => setError(err.message)).finally(() => setLoading(false))
+    await res.json().then(data => setVideoId(data.results[0].key)).catch(err => setError(err.message)).finally(() => setLoading(false))
   }
 
   useEffect(() => {
@@ -29,11 +29,14 @@ const SelectedItem = (props) => {
       {props.selectedMovie ? (
         <div className="movie-preview-container">
           <div className="movie-trailer-wrapper">
-            <iframe 
-              src={`https://cors-anywhere.herokuapp.com/https://www.youtube.com/embed/${videoId}`}
-              frameBorder="0"
-              title="video"
-            />
+            <div className="movie-preview-box">
+              <img src={`${config.IMAGE_PATH}/original/${props.selectedMovie.backdrop_path}`} alt="backdrop"/>
+              <div className="video-start-box">
+                <a href={`http://youtube.com/watch?v=${videoId}`} target="_blank" rel="noopener noreferrer">
+                  <div></div>
+                </a>
+              </div>
+            </div>
           </div>
           <div className="movie-info-wrapper">
 

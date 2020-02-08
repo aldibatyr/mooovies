@@ -1,3 +1,61 @@
 .selected-item {
   grid-column: 2/12;
 }
+
+.movie-preview-container {
+  width: 100%;
+  display: flex;
+}
+
+.movie-trailer-wrapper {
+  width: 50%; 
+}
+
+.movie-preview-box {
+  width: 95%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 30px;
+  position: relative;
+  img {
+    width: 100%;
+    filter: brightness(80%);
+    transition: 0.2s ease-in;
+  }
+}
+
+.video-start-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background-color: #900e9cc0;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s all ease-in-out;
+  &:hover {
+    cursor: pointer;
+    background-color: #ce12dfc0;
+    box-shadow: 4px 4px 6px #1b081dc0;
+  }
+  a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    div {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-45%,-45%);
+      width: 0; 
+      height: 0; 
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      
+      border-left: 10px solid rgb(47, 5, 53);
+    }
+  }
+
+}
