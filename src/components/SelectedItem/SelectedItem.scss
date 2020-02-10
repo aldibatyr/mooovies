@@ -1,3 +1,6 @@
+$pink: #B528B2;
+
+
 .selected-item {
   grid-column: 2/12;
 }
@@ -8,18 +11,17 @@
 }
 
 .movie-trailer-wrapper {
-  width: 50%; 
+  width: 50%;
 }
 
 .movie-preview-box {
-  width: 95%;
-  margin: 0 auto;
   overflow: hidden;
   border-radius: 30px;
   position: relative;
+
   img {
     width: 100%;
-    filter: brightness(80%);
+    filter: brightness(50%);
     transition: 0.2s ease-in;
   }
 }
@@ -35,27 +37,94 @@
   left: 50%;
   transform: translate(-50%, -50%);
   transition: 0.3s all ease-in-out;
+
   &:hover {
     cursor: pointer;
     background-color: #ce12dfc0;
     box-shadow: 4px 4px 6px #1b081dc0;
   }
+
   a {
     display: block;
     height: 100%;
     width: 100%;
+
     div {
       position: absolute;
       left: 50%;
       top: 50%;
-      transform: translate(-45%,-45%);
-      width: 0; 
-      height: 0; 
+      transform: translate(-45%, -45%);
+      width: 0;
+      height: 0;
       border-top: 5px solid transparent;
       border-bottom: 5px solid transparent;
-      
+
       border-left: 10px solid rgb(47, 5, 53);
     }
   }
 
+}
+
+.movie-info-wrapper {
+  width: 50%;
+  padding-left: 10px;
+  position: relative;
+}
+
+.movie-main-info {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
+.movie-rating {
+  width: 50px;
+}
+
+.movie-title-date {
+  width: 90%;
+  padding-left: 10px;
+}
+
+.movie-overview {
+  height: calc(100% - 140px);
+}
+
+.selected-item-actions-control {
+  display: flex;
+  height: 70px;
+}
+
+.button-wrapper {
+  height: 40px;
+  width: 40px;
+  margin: auto 15px;
+  button {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    border: 3px solid $pink;
+    background-color: rgba(111, 31, 108, 0.719);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in;
+    &:hover {
+      cursor: pointer;
+      background-color: $pink;
+      box-shadow: 4px 4px 6px #1b081dc0;
+      svg {
+        color: rgba(111, 31, 108, 0.719);
+      }
+    }
+    svg {
+      color: $pink;
+    }
+  }
+}
+
+.first {
+  margin-left: 0;
 }

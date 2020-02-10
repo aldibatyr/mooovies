@@ -11,12 +11,13 @@ function App() {
   const [genres, setGenres] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
   
 
   const fetchData = async () => {
     setLoading(true);
     setError(false)
-    const moviesData = await fetch(`${config.API_ENDPOINT}/movie/popular?api_key=${config.API_KEY}`);
+    const moviesData = await fetch(`${config.API_ENDPOINT}/movie/popular?api_key=${config.API_KEY}&page=${page}`);
     const genresData = await fetch(`${config.API_ENDPOINT}/genre/movie/list?api_key=${config.API_KEY}`);
     await moviesData.json().then(data => setMovies(data.results)).catch(err => setError(err.message));
     await genresData.json().then(data => setGenres(data.genres)).catch(err => setError(err.message));
@@ -26,8 +27,11 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, [page])
 
+  const handleNextPageLoad = () => {
+    setPage(page+1)
+  }
 
   return (
     <div className="App">
@@ -45,7 +49,7 @@ function App() {
               ) : (
                   <>
                     <Dashboard />
-                    <MainView genres={genres} movies={movies} />
+                    <MainView genres={genres} movies={movies} handleNextPageLoad={handleNextPageLoad} />
                   </>
                 )
             }

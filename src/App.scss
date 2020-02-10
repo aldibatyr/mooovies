@@ -2,6 +2,7 @@ $pink: #B528B2;
 
 .App {
   width: 100vw;
+  max-width: 1920px;
   background-image: linear-gradient(rgba(60, 21, 59, 0.808),rgba(60, 21, 59, 0.808)), url('./assets/background.jpg');
   background-position: center;
   background-repeat: no-repeat;
