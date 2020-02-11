@@ -11,9 +11,11 @@ const SelectedItem = (props) => {
   const [videoId, setVideoId] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [selected, setSelected] = useState({})
 
-
+  console.log(selected)
   useEffect(() => {
+    setSelected(props.selectedMovie)
     const getYTLink = async () => {
       setLoading(true);
       const res = await fetch(`${config.API_ENDPOINT}/movie/${props.selectedMovie.id}/videos?api_key=${config.API_KEY}`);

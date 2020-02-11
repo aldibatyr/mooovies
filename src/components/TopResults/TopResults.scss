@@ -1,7 +1,9 @@
+$pink: #B528B2;
+
 .top-results {
   grid-column: 2/12;
-  height: 160px;
-
+  height: 200px;
+  overflow: hidden;
 }
 
 .title {
@@ -12,11 +14,34 @@
 }
 
 .movies-cards {
-  // display: flex;
-  // justify-content: space-between;
-  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  height: 90%;
   width: 100%;
   overflow-x: scroll;
   padding-bottom: 20px;
+  >div {
+    margin: 0 10px;
+  }
 
+
+}
+
+.see-more-button {
+  display: inline-block;
+  height: 100%;
+  button {
+    background: $pink;
+    border-radius: 30px;
+    width: 70px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 5px 8px;
+    border: none;
+    transform: rotate(90deg) translate(-70px, 20px);
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

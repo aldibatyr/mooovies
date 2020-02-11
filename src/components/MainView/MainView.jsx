@@ -12,7 +12,7 @@ const MainView = (props) => {
   }
   return (
     <div className="main-view">
-      <Navigation genres={props.genres}/>
+      <Navigation genres={props.genres} handleSearchQuerySet={props.handleSearchQuerySet} fetchFromSearch={props.fetchFromSearch}/>
       <TopResults handleClick={handleClick} topMovies={props.movies} handleNextPageLoad={props.handleNextPageLoad}/>
       <SelectedItem selectedMovie={selectedMovie}/>
     </div>

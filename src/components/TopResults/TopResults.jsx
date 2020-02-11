@@ -8,7 +8,7 @@ const TopResults = (props) => {
   return (
     <div className="top-results">
       <div className="title">
-        <span>Top Results</span>
+        <span>movie list</span>
       </div>
       <div className="movies-cards">
           {props.topMovies.map(movie => <MovieCard handleClick={props.handleClick} key={movie.id} movie={movie} />)}

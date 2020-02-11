@@ -29,14 +29,23 @@ const Navigation = (props) => {
           </select>
         </div>
         <div>
-          <label>Year</label>
-          <select>
+          <label htmlFor='year'>Year</label>
+          <select name='year' id='year'>
             {makeYearOptions()}
           </select>
         </div>
+        <div>
+          <label htmlFor='sort'>
+            <select name="sort" id="sort">
+              <option value="popularity.asc">Popularity Ascending</option>
+              <option value="popularity.decs">Popularity Descending</option>
+              
+            </select>
+          </label>
+        </div>
       </div>
       <div className="search-wrapper">
-        <SearchBar/>
+        <SearchBar handleSearchQuerySet={props.handleSearchQuerySet} fetchFromSearch={props.fetchFromSearch}/>
       </div>
     </div>
   )
