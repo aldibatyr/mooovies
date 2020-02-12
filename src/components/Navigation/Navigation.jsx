@@ -5,7 +5,6 @@ import './Navigation.scss';
 
 const Navigation = (props) => {
 
-  const [genres, setGenres] = useState(props.genres)
 
   function makeYearOptions() {
     let years = [];
@@ -17,13 +16,13 @@ const Navigation = (props) => {
   }
 
   return (
-    
+    <div className="navigation-wrapper">
     <div className="navigation">
       <div className="sort-options">
         <div>
           <label htmlFor='genre'>Genres</label>
           <select>
-            {genres.map(genre => {
+            {props.genres.map(genre => {
               return <option key={genre.id}>{genre.name}</option>
             })}
           </select>
@@ -47,6 +46,7 @@ const Navigation = (props) => {
       <div className="search-wrapper">
         <SearchBar handleSearchQuerySet={props.handleSearchQuerySet} fetchFromSearch={props.fetchFromSearch}/>
       </div>
+    </div>
     </div>
   )
 }

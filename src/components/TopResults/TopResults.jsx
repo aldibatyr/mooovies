@@ -1,6 +1,7 @@
 import React from 'react';
 import './TopResults.scss';
 import MovieCard from '../MovieCard/MovieCard';
+import { Link } from 'react-router-dom';
 
 const TopResults = (props) => {
 
@@ -8,13 +9,15 @@ const TopResults = (props) => {
   return (
     <div className="top-results">
       <div className="title">
-        <span>movie list</span>
+        <span>most popular</span>
       </div>
       <div className="movies-cards">
-          {props.topMovies.map(movie => <MovieCard handleClick={props.handleClick} key={movie.id} movie={movie} />)}
-        <div className="see-more-button">
-          <button onClick={() => props.handleNextPageLoad()}>
-            See More
+        {props.topMovies.map(movie => <MovieCard handleClick={props.handleClick} key={movie.id} movie={movie} />)}
+        <div className="top-results-button">
+          <button>
+            <Link to='/full-list'>
+              Full List
+            </Link>
           </button>
         </div>
       </div>

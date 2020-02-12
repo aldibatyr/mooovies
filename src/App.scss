@@ -1,14 +1,21 @@
 $pink: #B528B2;
 
+header {
+  width: 100vw;
+  grid-column: 1/13;
+}
+
 .App {
+  
   width: 100vw;
   max-width: 1920px;
-  background-image: linear-gradient(rgba(60, 21, 59, 0.808),rgba(60, 21, 59, 0.808)), url('./assets/background.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(12 1fr);
+  color: #000000;
+}
+
+.view-page {
+  grid-column: 3/11;
 }
 
 .loading-screen {

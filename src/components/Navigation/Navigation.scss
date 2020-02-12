@@ -1,5 +1,10 @@
+@use '../../variables.scss';
+.navigation-wrapper {
+  grid-column: 1/13;
+}
 .navigation {
-  grid-column: 2/12;
+  width: 83%;
+  margin: 0 auto;
   height: 70px;
   align-items: center;
   display: flex;

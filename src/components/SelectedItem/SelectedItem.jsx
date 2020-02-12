@@ -5,6 +5,7 @@ import './SelectedItem.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faHeart, faStar, faBookmark} from '@fortawesome/free-solid-svg-icons';
 import config from '../../config';
+import { Link } from 'react-router-dom';
 
 const SelectedItem = (props) => {
 
@@ -87,6 +88,11 @@ const SelectedItem = (props) => {
                 <button type="submit">
                   <FontAwesomeIcon icon={faBookmark} size='2x'/>
                 </button>
+              </div>
+              <div className="more-details-wrapper">
+                <Link to={`/selected/${props.selectedMovie.id}`}>
+                  More Details...
+                </Link>
               </div>
             </div>
           </div>
