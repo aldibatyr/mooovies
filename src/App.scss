@@ -1,21 +1,29 @@
 $pink: #B528B2;
+@import './breakpoints/breakpoints.scss';
 
-header {
-  width: 100vw;
-  grid-column: 1/13;
-}
+
 
 .App {
-  
+  margin: 0 auto;
   width: 100vw;
   max-width: 1920px;
   display: grid;
-  grid-template-columns: repeat(12 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 1em;
   color: #000000;
 }
 
+
+header {
+  grid-column: 2/12;
+  @include media ('<=tablet') {
+    grid-column: 1/13;
+    width: 90%;
+  }
+}
+
 .view-page {
-  grid-column: 3/11;
+  grid-column: 2/12;
 }
 
 .loading-screen {

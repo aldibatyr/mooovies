@@ -1,0 +1,73 @@
+@import '../../globals/variables';
+@import '../../breakpoints//breakpoints.scss';
+.hero-info-wrapper {
+  grid-column: 2/5;
+  margin-top: 150px;
+  h1 {
+    font-size: 2.5rem;
+  }
+  @include media ('<=tablet') {
+    grid-column: 1/7;
+    margin-left: 10px;
+  }
+}
+
+
+
+
+.subtitle-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.subtitle-text {
+  width: 70%;
+}
+
+
+.logo-wrapper {
+  margin-left: 20px;
+  margin-left: auto;
+  img {
+    height: 75px;
+  }
+}
+
+.cta-button-wrapper {
+  margin-top: 20px;
+
+}
+
+.cta-button {
+  width: 250px;
+  height: 50px;
+  background: linear-gradient(45deg, $maxYellow, $darkTerraCotta);
+  border: none;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.main-featured {
+  margin-top: 150px;
+  grid-column: 8/12;
+  height: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  text-align: right;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.movie-poster {
+  max-height: 200px;
+  overflow: hidden;
+  img {
+    height: 100%;
+  }
+}
