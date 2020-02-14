@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SearchBar from '../SearchBar/SearchBar';
 import config from '../../config';
-import { Link } from 'react-router-dom';
-import logo from '../../assets/mooovies2.png';
+import { Link, NavLink } from 'react-router-dom';
+import logo from '../../assets/mooovies-logo.png';
 import './Navigation.scss';
 
 const Navigation = (props) => {
@@ -25,34 +25,20 @@ const Navigation = (props) => {
         </Link>
       </div>
       <div className="navigation">
-        {/* <div className="sort-options">
-          <div>
-            <label htmlFor='genre'>Genres</label>
-            <select>
-              {props.genres.map(genre => {
-                return <option key={genre.id}>{genre.name}</option>
-              })}
-            </select>
-          </div>
-          <div>
-            <label htmlFor='year'>Year</label>
-            <select name='year' id='year'>
-              {makeYearOptions()}
-            </select>
-          </div>
-          <div>
-            <label htmlFor='sort'>
-              Sort
-          </label>
-            <select name="sort" id="sort">
-              <option value="popularity.asc">Popularity Ascending</option>
-              <option value="popularity.decs">Popularity Descending</option>
-            </select>
-          </div>
-        </div> */}
-        <div className="search-wrapper">
-          <SearchBar handleSearchQuerySet={props.handleSearchQuerySet} fetchFromSearch={props.fetchFromSearch} />
+        <div className="route-links">
+          <Link to='/full-list'>
+          <span className='link-text'>DISCOVER</span>  
+          </Link>
+          <Link>
+          <span className='link-text'>POPULAR</span>  
+          </Link>
+          <Link>
+          <span className='link-text'>IN THEATERS</span>  
+          </Link>
         </div>
+      </div>
+      <div className="search-wrapper">
+        <SearchBar handleSearchQuerySet={props.handleSearchQuerySet} fetchFromSearch={props.fetchFromSearch} />
       </div>
     </div>
   )

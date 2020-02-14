@@ -1,14 +1,14 @@
 @import '../../globals/variables';
 @import '../../breakpoints//breakpoints.scss';
 .hero-info-wrapper {
-  grid-column: 2/5;
-  margin-top: 150px;
+  grid-column: 2/span 3;
+  height: 70vh;
+  padding-top: 100px;
   h1 {
     font-size: 2.5rem;
   }
-  @include media ('<=tablet') {
-    grid-column: 1/7;
-    margin-left: 10px;
+  @include media ('<desktop') {
+    grid-column: 2/span 3;
   }
 }
 
@@ -22,15 +22,16 @@
 }
 
 .subtitle-text {
-  width: 70%;
+  width: 50%;
+  font-size: 1.5rem;
 }
 
 
 .logo-wrapper {
-  margin-left: 20px;
   margin-left: auto;
+  height: 100px;
   img {
-    height: 75px;
+    height: 100%;
   }
 }
 
@@ -45,29 +46,17 @@
   background: linear-gradient(45deg, $maxYellow, $darkTerraCotta);
   border: none;
   border-radius: 25px;
-  font-size: 1.5rem;
   &:hover {
     cursor: pointer;
+    background: linear-gradient(45deg, $darkTerraCotta, $maxYellow);
+    box-shadow: 6px 6px 16px #000000;
   }
 }
 
-.main-featured {
-  margin-top: 150px;
-  grid-column: 8/12;
-  height: auto;
-  overflow: hidden;
-  border-radius: 15px;
-  text-align: right;
+.pretty-holder {
+  padding-top: 50px;
+  grid-column: 8/span 4;
   img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.movie-poster {
-  max-height: 200px;
-  overflow: hidden;
-  img {
-    height: 100%;
+    width: 400px;
   }
 }

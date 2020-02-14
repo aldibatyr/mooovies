@@ -59,9 +59,7 @@ const App = () => {
     setLoading(false);
   };
 
-  const handleNextPageLoad = () => {
-    setPage(page + 1);
-  };
+
 
   
   return (
@@ -69,17 +67,26 @@ const App = () => {
       <header>
         <Navigation genres={genres} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch}/>
       </header>
-      <Switch>
-        <Route exact path='/'>
-          <MainPage genres={genres} movies={movies} handleNextPageLoad={handleNextPageLoad} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch}/>
-        </Route>
-        <Route path='/full-list'>
-          <FullListPage list={movies}/>
-        </Route>
-        <Route path={`/selected/:id`}>
-          <DetailedViewPage/>
-        </Route>
-      </Switch>
+      {loading ? (
+        <div className="loading-screen">
+          Loading items
+        </div>
+      ) : (
+        <Switch>
+          <Route exact path='/'>
+            <MainPage genres={genres} movies={movies}  handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch}/>
+          </Route>
+          <Route path='/full-list'>
+            <FullListPage />
+          </Route>
+          <Route path={`/selected/:id`}>
+            <DetailedViewPage/>
+          </Route>
+        </Switch>
+      )}
+      <footer>
+        this is footer
+      </footer>
     </div>
   )
 }

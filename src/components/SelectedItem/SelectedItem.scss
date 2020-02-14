@@ -1,8 +1,14 @@
-$pink: #B528B2;
+@import '../../globals/variables';
 
 
 .selected-item {
   grid-column: 2/12;
+  padding: 20px 50px;
+  background: linear-gradient(45deg, $maxYellow, $darkCerulean);
+  border-radius: 30px;
+  .title {
+    margin-bottom: 10px;
+  }
 }
 
 .movie-preview-container {
@@ -30,7 +36,7 @@ $pink: #B528B2;
   width: 36px;
   height: 36px;
   border-radius: 100%;
-  background-color: #900e9cc0;
+  background-color: $darkTerraCotta;
   position: absolute;
   z-index: 100;
   top: 50%;
@@ -40,7 +46,7 @@ $pink: #B528B2;
 
   &:hover {
     cursor: pointer;
-    background-color: #ce12dfc0;
+    background-color: $maxYellow;
     box-shadow: 4px 4px 6px #1b081dc0;
   }
 
@@ -105,26 +111,34 @@ $pink: #B528B2;
     height: 100%;
     width: 100%;
     border-radius: 100%;
-    border: 3px solid $pink;
-    background-color: rgba(111, 31, 108, 0.719);
+    background-color: rgba(168, 110, 118, 0.555);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.2s ease-in;
     &:hover {
       cursor: pointer;
-      background-color: $pink;
+      background-color: $darkTerraCotta;
       box-shadow: 4px 4px 6px #1b081dc0;
+      border: $maxYellow;
       svg {
-        color: rgba(111, 31, 108, 0.719);
+        color: $maxYellow;
       }
     }
     svg {
-      color: $pink;
+      height: 70%;
+      width: 70%;
+      color: #fff;
+      
     }
   }
 }
 
 .first {
   margin-left: 0;
+}
+
+.more-details-wrapper {
+  display: flex;
+  align-items: center;
 }

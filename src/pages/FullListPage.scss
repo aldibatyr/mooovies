@@ -1,0 +1,34 @@
+@import '../globals/variables';
+
+.list {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.load-button-wrapper {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.load-more-button {
+    width: 200px;
+    margin: 0 auto;
+    button {
+        width: 100%;
+        height: 30px;
+        background: linear-gradient(45deg, #EDAE49, #D1495B);
+        border: none;
+        border-radius: 15px;
+        &:hover {
+            cursor: pointer;
+            background: linear-gradient(45deg, $darkTerraCotta, $maxYellow);
+            box-shadow: 6px 6px 16px #000000;
+        }
+    }
+        span {
+            color: $darkGunmetal !important;
+        }
+        
+}

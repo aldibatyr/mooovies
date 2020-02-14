@@ -30,7 +30,7 @@ const SelectedItem = (props) => {
   return (
     <div className="selected-item">
       <div className="title">
-        <span>movie preview</span>
+        <span>most popular movie of the day</span>
       </div>
       {props.selectedMovie ? (
         <div className="movie-preview-container">
@@ -55,7 +55,7 @@ const SelectedItem = (props) => {
                   styles={buildStyles({
                     textSize: "36px",
                     textColor: "#ececec",
-                    pathColor: "#B528B2"
+                    pathColor: "#D1495B"
 
                   })}
                 />

@@ -10,35 +10,36 @@
   width: 36px;
   margin: auto 0;
   img {
-    height: 100%;
-    width: auto;
+    width: 100%;
   }
 }
 .navigation {
   height: 70px;
-  margin-left: auto;
+  margin: auto;
   align-items: center;
   display: flex;
-}
-
-.sort-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 20px;
-  div {
-    display: flex;
-    margin: auto 10px;
-    label {
-      margin-right: 5px;
-      font-size: 1rem;
-    }
-    select {
-      color: $darkGunmetal;
-    }
+  a {
+    text-decoration: none;
   }
 }
 
+.route-links {
+  a {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  a:last-child {
+    margin-right: 0px;
+  }
+  
+}
+
 .search-wrapper {
-  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  display: block;
+  margin: 0 auto;
 }
