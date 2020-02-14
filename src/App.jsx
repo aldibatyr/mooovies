@@ -5,20 +5,22 @@ import FullListPage from './pages/FullListPage';
 import Navigation from './components/Navigation/Navigation';
 import DetailedViewPage from './pages/DetailedViewPage';
 import config from './config';
+import MyListPage from './pages/MyListPage';
 
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [genres, setGenres] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(1);
+  const [count, setCount] = useState(1);
   const [searchQuery, setSearchQuery] = useState(null);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
 
   const fetchData = async () => {
     setLoading(true);
     setError(false)
-    const moviesData = await fetch(`${config.API_ENDPOINT}/movie/popular?api_key=${config.API_KEY}&page=${page}`);
+    const moviesData = await fetch(`${config.API_ENDPOINT}/movie/popular?api_key=${config.API_KEY}&page=${count}`);
     const genresData = await fetch(`${config.API_ENDPOINT}/genre/movie/list?api_key=${config.API_KEY}`);
     await moviesData.json().then(data => setMovies(data.results)).catch(err => setError(err.status_message));
     await genresData.json().then(data => setGenres(data.genres)).catch(err => setError(err.status_message));
@@ -26,10 +28,20 @@ const App = () => {
 
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [page]);
+  const assignSelected = (clickedItem) => {
+    setSelectedMovie(clickedItem)
+  };
 
+
+
+  const addMoreItems = async (count) => {
+    const moviesData = await fetch(`${config.API_ENDPOINT}/movie/popular?api_key=${config.API_KEY}&page=${count}`);
+    await moviesData.json().then(data => setMovies(data.results)).catch(err => setError(err.message));
+  }
+
+  const handleButtonClick = () => {
+    setCount(count + 1);
+  }
 
   const handleSearchQuerySet = (e) => {
     setSearchQuery(e.target.value);
@@ -67,23 +79,21 @@ const App = () => {
       <header>
         <Navigation genres={genres} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch}/>
       </header>
-      {loading ? (
-        <div className="loading-screen">
-          Loading items
-        </div>
-      ) : (
+ 
         <Switch>
           <Route exact path='/'>
-            <MainPage genres={genres} movies={movies}  handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch}/>
+            <MainPage genres={genres} movies={movies} fetchData={fetchData} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch}/>
           </Route>
           <Route path='/full-list'>
-            <FullListPage />
+            <FullListPage movies={movies} addMoreItems={addMoreItems} assignSelected={assignSelected} handleButtonClick={handleButtonClick} count={count}/>
           </Route>
           <Route path={`/selected/:id`}>
-            <DetailedViewPage/>
+            <DetailedViewPage selected={selectedMovie}/>
+          </Route>
+          <Route path='/my-list'>
+            <MyListPage/>
           </Route>
         </Switch>
-      )}
       <footer>
         this is footer
       </footer>

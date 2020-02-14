@@ -10,21 +10,23 @@ const Hero = () => {
   return (
     <>
       <div className="hero-info-wrapper">
-        <h1>DISCOVER NEW MOVIES</h1>
-        <div className="subtitle-wrapper">
-          <div className="subtitle-text">
-            <span>MADE POSSIBLE THANKS TO <a href="http://themoviedb.org" target="_blank" rel="noopener noreferrer">THEMOVIEDB.ORG</a></span>
+        <div className="hero-info">
+          <h1>DISCOVER NEW MOVIES</h1>
+          <div className="subtitle-wrapper">
+            <div className="subtitle-text">
+              <span>MADE POSSIBLE THANKS TO <a href="http://themoviedb.org" target="_blank" rel="noopener noreferrer">THEMOVIEDB.ORG</a></span>
+            </div>
+            <div className="logo-wrapper">
+              <img src={moviedblogo} alt="logo" />
+            </div>
           </div>
-          <div className="logo-wrapper">
-            <img src={moviedblogo} alt="logo" />
-          </div>
-        </div>
-        <div className="cta-button-wrapper">
-          <Link to='/full-list'>
-            <button className='cta-button'>
-              DISCOVER
+          <div className="cta-button-wrapper">
+            <Link to='/full-list'>
+              <button className='cta-button'>
+                DISCOVER
             </button>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="pretty-holder">

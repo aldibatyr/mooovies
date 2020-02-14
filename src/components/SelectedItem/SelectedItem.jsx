@@ -14,7 +14,6 @@ const SelectedItem = (props) => {
   const [loading, setLoading] = useState(false);
   const [selected, setSelected] = useState({})
 
-  console.log(selected)
   useEffect(() => {
     setSelected(props.selectedMovie)
     const getYTLink = async () => {

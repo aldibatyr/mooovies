@@ -7,7 +7,7 @@ $pink: #B528B2;
 .App {
   margin: 0 auto;
   width: 100vw;
-  // min-height: 100vh;
+  min-height: 100vh;
   max-width: 1920px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);

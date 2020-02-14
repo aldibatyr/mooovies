@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../App.scss';
-
-import MainView from '../components/MainView/MainView';
 import Hero from '../components/Hero/Hero';
 import SelectedItem from '../components/SelectedItem/SelectedItem';
 
 function MainPage(props) {
 
+  useEffect(() => {
+    props.fetchData();
+  }, []);
 
   return (
     <>
