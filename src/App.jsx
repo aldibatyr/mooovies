@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import FullListPage from './pages/FullListPage';
@@ -73,27 +73,27 @@ const App = () => {
 
 
 
-  
+
   return (
     <div className="App">
       <header>
-        <Navigation genres={genres} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch}/>
+        <Navigation genres={genres} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch} />
       </header>
- 
-        <Switch>
-          <Route exact path='/'>
-            <MainPage genres={genres} movies={movies} fetchData={fetchData} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch}/>
-          </Route>
-          <Route path='/full-list'>
-            <FullListPage movies={movies} addMoreItems={addMoreItems} assignSelected={assignSelected} handleButtonClick={handleButtonClick} count={count}/>
-          </Route>
-          <Route path={`/selected/:id`}>
-            <DetailedViewPage selected={selectedMovie}/>
-          </Route>
-          <Route path='/my-list'>
-            <MyListPage/>
-          </Route>
-        </Switch>
+
+      <Switch>
+        <Route exact path='/'>
+          <MainPage genres={genres} movies={movies} fetchData={fetchData} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch} />
+        </Route>
+        <Route path='/full-list'>
+          <FullListPage movies={movies} addMoreItems={addMoreItems} assignSelected={assignSelected} handleButtonClick={handleButtonClick} count={count} />
+        </Route>
+        <Route path={`/selected/:id`}>
+          <DetailedViewPage selected={selectedMovie} />
+        </Route>
+        <Route path='/my-list'>
+          <MyListPage />
+        </Route>
+      </Switch>
       <footer>
         this is footer
       </footer>

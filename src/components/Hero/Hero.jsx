@@ -7,6 +7,7 @@ import config from '../../config';
 
 const Hero = () => {
 
+
   return (
     <>
       <div className="hero-info-wrapper">
