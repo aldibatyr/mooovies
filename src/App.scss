@@ -12,11 +12,10 @@ $pink: #B528B2;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 1rem;
-  color: #fff;
+}
 
-  a {
-    color: #fff;
-  }
+a {
+  color: #000;
 }
 
 

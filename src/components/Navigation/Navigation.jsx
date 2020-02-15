@@ -27,13 +27,16 @@ const Navigation = (props) => {
       <div className="navigation">
         <div className="route-links">
           <Link to='/full-list'>
-          <span className='link-text'>DISCOVER</span>  
-          </Link>
-          <Link>
           <span className='link-text'>POPULAR</span>  
           </Link>
           <Link>
+          <span className='link-text'>COLLECTIONS</span>  
+          </Link>
+          <Link>
           <span className='link-text'>IN THEATERS</span>  
+          </Link>
+          <Link>
+          <span className='link-text'>MY LIST</span>  
           </Link>
         </div>
       </div>

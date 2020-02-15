@@ -1,3 +1,27 @@
+@import '../globals/variables';
+
 .detailed-view-page {
     grid-column: 2/span 10;
+    background: linear-gradient(45deg, $maxYellow, $darkCerulean);
+    border-radius: 15px;
+    padding: 10px 20px;
+}
+
+.page-title {
+    margin-bottom: 10px;
+}
+
+.main-info {
+    display: flex;
+}
+
+.image-cover {
+    position: relative;
+    width: 500px;
+    overflow: hidden;
+    border-radius: 15px;
+    img {
+        width: 100%;
+        display: block;
+    }
 }
