@@ -1,5 +1,4 @@
-$pink: #B528B2;
-@import './globals//variables';
+@import './globals/variables';
 @import './breakpoints/breakpoints.scss';
 
 
@@ -14,22 +13,16 @@ $pink: #B528B2;
   grid-column-gap: 1rem;
 }
 
-a {
-  color: #000;
-}
-
 
 header {
-  grid-column: 2/12;
+  width: 100vw;
   height: 80px;
-  @include media ('<=tablet') {
-    grid-column: 1/13;
-    width: 90%;
-    margin: 0 auto;
-  }
-  background-color: $darkCerulean;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: fixed;
+  z-index: 1000;
+  // background-color: $main;
   border-radius: 0px 0px 10px 10px;
-  padding: 10px 20px;
 }
 
 .view-page {
@@ -45,9 +38,9 @@ header {
 
 footer {
   margin-top: 100px;
-  grid-column: 2/ span 10;
+  grid-column: 1/ span 12;
   min-height: 250px;
-  background-color: $darkCerulean;
+  background-color: $main;
   border-radius: 10px 10px 0px 0px;
   padding: 10px 20px;
 }

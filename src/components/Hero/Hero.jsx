@@ -9,10 +9,10 @@ const Hero = () => {
 
 
   return (
-    <>
+    <div className="hero">
       <div className="hero-info-wrapper">
         <div className="hero-info">
-          <h1>DISCOVER NEW MOVIES</h1>
+          <span className='heading'>DISCOVER NEW MOVIES</span>
           <div className="subtitle-wrapper">
             <div className="subtitle-text">
               <span>MADE POSSIBLE THANKS TO <a href="http://themoviedb.org" target="_blank" rel="noopener noreferrer">THEMOVIEDB.ORG</a></span>
@@ -33,7 +33,7 @@ const Hero = () => {
       <div className="pretty-holder">
         <img className='background-image' src={heroAsset} alt="cover" />
       </div>
-    </>
+    </div>
   )
 }
 

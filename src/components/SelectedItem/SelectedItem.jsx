@@ -59,7 +59,7 @@ const SelectedItem = (props) => {
         <div className="movie-preview-container">
           <div className="movie-trailer-wrapper">
             <div className="movie-preview-box">
-              <img src={`${config.IMAGE_PATH}/original/${featured.backdrop_path}`} alt="backdrop" />
+              <img src={`${config.IMAGE_PATH}/w500${featured.backdrop_path}`} alt="backdrop" />
               <div className="video-start-box">
                 <a href={`http://youtube.com/watch?v=${videoId}`} target="_blank" rel="noopener noreferrer">
                   <div></div>

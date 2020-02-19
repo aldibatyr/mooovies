@@ -23,12 +23,9 @@
         border-radius: 15px;
         &:hover {
             cursor: pointer;
-            background: linear-gradient(45deg, $darkTerraCotta, $maxYellow);
+            background: linear-gradient(45deg, $main, $secondary);
             box-shadow: 6px 6px 16px #000000;
         }
     }
-        span {
-            color: $darkGunmetal !important;
-        }
         
 }

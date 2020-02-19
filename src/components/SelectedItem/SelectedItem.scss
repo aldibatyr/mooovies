@@ -1,32 +1,42 @@
 @import '../../globals/variables';
+@import '../../breakpoints/breakpoints.scss';
 
 
 .selected-item {
+  margin-top: -50px;
   grid-column: 2/12;
   padding: 20px 50px;
-  background: linear-gradient(45deg, $maxYellow, $darkCerulean);
-  border-radius: 30px;
+  background: linear-gradient(45deg, $main, $secondary );
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px #666666;
   .title {
     margin-bottom: 10px;
+    text-transform: uppercase;
   }
 }
 
 .movie-preview-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .movie-trailer-wrapper {
   width: 50%;
+  @include media ('<=tablet') {
+    width: 100%;
+  }
 }
 
 .movie-preview-box {
   overflow: hidden;
-  border-radius: 30px;
+  border-radius: 10px;
   position: relative;
 
   img {
     width: 100%;
+    max-height: 100%;
     filter: brightness(50%);
     transition: 0.2s ease-in;
   }
@@ -36,7 +46,7 @@
   width: 36px;
   height: 36px;
   border-radius: 100%;
-  background-color: $darkTerraCotta;
+  background-color: $complementary;
   position: absolute;
   z-index: 100;
   top: 50%;
@@ -46,8 +56,8 @@
 
   &:hover {
     cursor: pointer;
-    background-color: $maxYellow;
-    box-shadow: 4px 4px 6px #1b081dc0;
+    background-color: $secondary;
+    box-shadow: 0px 3px 6px #1b081dc0;
   }
 
   a {
@@ -73,8 +83,13 @@
 
 .movie-info-wrapper {
   width: 50%;
-  padding-left: 10px;
+  padding-left: 50px;
   position: relative;
+  @include media ('<=tablet') {
+    margin-top: 10px;
+    width: 100%;
+    padding-left: 0;
+  }
 }
 
 .movie-main-info {
@@ -118,11 +133,11 @@
     transition: 0.2s ease-in;
     &:hover {
       cursor: pointer;
-      background-color: $darkTerraCotta;
-      box-shadow: 4px 4px 6px #1b081dc0;
-      border: $maxYellow;
+      background-color: $secondary;
+      box-shadow: 0px 3px 6px #666666;
+      border: $main;
       svg {
-        color: $maxYellow;
+        color: $complementary;
       }
     }
     svg {
