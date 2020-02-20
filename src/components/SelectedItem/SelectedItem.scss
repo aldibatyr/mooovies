@@ -13,6 +13,11 @@
     margin-bottom: 10px;
     text-transform: uppercase;
   }
+  @include media ('<=lgPhone') {
+    padding: 10px;
+    grid-column: 1/ span 12;
+    margin: -50px 10px 0px 10px;
+  }
 }
 
 .movie-preview-container {

@@ -4,13 +4,14 @@ import './AboutInfo.scss';
 function AboutInfo() {
   return (
     <section className='about-info-section'>
-      <h1 className="heading">
-        <span>
-          How It Works?
+      <div className="section-heading">
+        <h1 className="heading">
+          <span>
+            How It Works?
         </span>
-      </h1>
-      <h4>Let me explain</h4>
-
+        </h1>
+        <span>Let me explain</span>
+      </div>
       <div className="main-points-wrapper">
         <div className="main-point-card">
           <h3>Step 1</h3>
@@ -18,7 +19,7 @@ function AboutInfo() {
         </div>
         <div className="main-point-card">
           <h3>Step 2</h3>
-          <p>The data is presented neatly in a list size.</p>
+          <p>The data is presented neatly in a list format. Of course, you are free to filter the movies based on your liking.</p>
         </div>
         <div className="main-point-card">
           <h3>Step 3</h3>

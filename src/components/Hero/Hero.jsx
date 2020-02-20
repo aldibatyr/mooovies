@@ -30,9 +30,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="pretty-holder">
-        <img className='background-image' src={heroAsset} alt="cover" />
-      </div>
     </div>
   )
 }

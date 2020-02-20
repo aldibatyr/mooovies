@@ -3,6 +3,7 @@ import '../App.scss';
 import Hero from '../components/Hero/Hero';
 import SelectedItem from '../components/SelectedItem/SelectedItem';
 import AboutInfo from '../components/AboutInfo/AboutInfo';
+import CTA from '../components/Overview/Overview';
 
 function MainPage(props) {
 
@@ -15,6 +16,7 @@ function MainPage(props) {
       <Hero />
       <SelectedItem selectedMovie={props.movies[0]}/>
       <AboutInfo/>
+      <CTA/>
     </>
   );
 }
