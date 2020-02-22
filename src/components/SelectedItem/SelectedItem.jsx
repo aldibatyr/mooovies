@@ -21,14 +21,8 @@ const SelectedItem = (props) => {
     let featuredMovie = await responseData.results[0];
     await setFeatured(featuredMovie);
     return featuredMovie;
-    // 
-    // let ytResponseData = await ytResponse.json();
-    // let (data => setFeatured(data.results[0])).catch(err => setError(err.message));
-    // const res = await fetch(`${config.API_ENDPOINT}/movie/${featured.id}/videos?api_key=${config.API_KEY}`);
-    // await res.json().then(data => setVideoId(data.results[0].key)).catch(err => setError(err.message)).finally(() => setLoading(false));
   }
 
-  // console.log(fetchFeaturedMovie())
 
   const fetchAllData = async () => {
     let featuredMovie = await fetchFeaturedMovie();

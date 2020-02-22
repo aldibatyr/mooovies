@@ -15,6 +15,7 @@
 
 
 header {
+  max-width: 1920px;
   width: 100vw;
   height: 80px;
   display: grid;
@@ -37,10 +38,8 @@ header {
 }
 
 footer {
-  margin-top: 100px;
   grid-column: 1/ span 12;
   min-height: 250px;
   background-color: $main;
-  border-radius: 10px 10px 0px 0px;
   padding: 10px 20px;
 }

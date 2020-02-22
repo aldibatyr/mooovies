@@ -3,6 +3,7 @@ import { useEffectOnce } from 'react-use';
 import { useParams } from 'react-router-dom';
 import './DetailedViewPage.scss';
 import config from '../config';
+import DetailedView from '../components/DetailedView/DetailedView';
 
 const DetailedViewPage = (props) => {
 
@@ -17,19 +18,11 @@ const DetailedViewPage = (props) => {
   useEffectOnce(() => {
     fetchMovie()
   })
+
+
   return (
     <div className="detailed-view-page">
-      <div className="main-info">
-        <div className="image-cover">
-          <img src={`${config.IMAGE_PATH}/original${movie.backdrop_path}`} alt="cover" />
-        </div>
-        <div className="info-wrapper">
-          <div className="page-title">
-  <h1>{movie.title} + <span>({movie.release_date})</span></h1>
-            <span>{movie.tagline}</span>
-          </div>
-        </div>
-      </div>
+      <DetailedView movie={movie}/>
     </div>
   )
 }

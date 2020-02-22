@@ -2,8 +2,6 @@ import React from 'react';
 import './Hero.scss';
 import { Link } from 'react-router-dom';
 import moviedblogo from '../../assets/moviedblogo.svg';
-import heroAsset from '../../assets/hero-asset.png';
-import config from '../../config';
 
 const Hero = () => {
 

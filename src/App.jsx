@@ -12,7 +12,7 @@ const App = () => {
   const [genres, setGenres] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [count, setCount] = useState(1);
+  
   const [searchQuery, setSearchQuery] = useState(null);
   const [selectedMovie, setSelectedMovie] = useState(null);
 
@@ -20,7 +20,7 @@ const App = () => {
   const fetchData = async () => {
     setLoading(true);
     setError(false)
-    const moviesData = await fetch(`${config.API_ENDPOINT}/movie/popular?api_key=${config.API_KEY}&page=${count}`);
+    const moviesData = await fetch(`${config.API_ENDPOINT}/movie/popular?api_key=${config.API_KEY}`);
     const genresData = await fetch(`${config.API_ENDPOINT}/genre/movie/list?api_key=${config.API_KEY}`);
     await moviesData.json().then(data => setMovies(data.results)).catch(err => setError(err.status_message));
     await genresData.json().then(data => setGenres(data.genres)).catch(err => setError(err.status_message));
@@ -34,14 +34,9 @@ const App = () => {
 
 
 
-  const addMoreItems = async (count) => {
-    const moviesData = await fetch(`${config.API_ENDPOINT}/movie/popular?api_key=${config.API_KEY}&page=${count}`);
-    await moviesData.json().then(data => setMovies(data.results)).catch(err => setError(err.message));
-  }
 
-  const handleButtonClick = () => {
-    setCount(count + 1);
-  }
+
+
 
   const handleSearchQuerySet = (e) => {
     setSearchQuery(e.target.value);
@@ -79,13 +74,12 @@ const App = () => {
       <header>
         <Navigation genres={genres} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch} />
       </header>
-
       <Switch>
         <Route exact path='/'>
           <MainPage genres={genres} movies={movies} fetchData={fetchData} handleSearchQuerySet={handleSearchQuerySet} fetchFromSearch={fetchFromSearch} />
         </Route>
         <Route path='/full-list'>
-          <FullListPage movies={movies} addMoreItems={addMoreItems} assignSelected={assignSelected} handleButtonClick={handleButtonClick} count={count} />
+          <FullListPage assignSelected={assignSelected} />
         </Route>
         <Route path={`/selected/:id`}>
           <DetailedViewPage selected={selectedMovie} />

@@ -1,0 +1,21 @@
+.full-info {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+  img {
+    border-radius: 5px;
+  }
+}
+
+.info-wrapper {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  z-index: 1000;
+}
+
+.movie-info {
+  margin-left: 20px;
+}
+
